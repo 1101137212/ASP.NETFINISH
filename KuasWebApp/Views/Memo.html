@@ -4,7 +4,7 @@
     <title>Memo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
-    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.moonlight.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
 
@@ -65,18 +65,51 @@
                 sortable: true,
                 scrollable: true,
                 sortable: true,
-                filterable: true,
+                filterable: {
+                    messages: {
+                        info: "新增查詢:",
+                        filter: "查詢",
+                        clear: "取消",
+                        eq: "等於",
+                        and: "且",
+                        or: "或",
+                    },
+                    operators: {
+                        string: {
+                            eq: "等於",
+                            neq: "不等於",
+                            startswith: "開頭為",
+                            contains: "包含",
+                            doesnotcontain: "不包含",
+                            endswith: "結尾為"
+                        },
+                        number: {
+                            eq: "等於",
+                            neq: "不等於",
+                            startswith: "開頭為",
+                            contains: "包含",
+                            doesnotcontain: "不包含",
+                            endswith: "結尾為"
+                        }
+                    }
+                },
                 editable: "inline",
-                toolbar: ["create"],
+                toolbar: [{ name: "create", text: "新增便籤" }],
                 pageable: {
                     input: true,
-                    numeric: false
+                    numeric: false,
+                    messages: {
+                        display: "顯示紀錄 {0} - {1} 共 {2}",
+                        empty: "沒有紀錄顯示",
+                        page: "第",
+                        of: "共 {0}",
+                    }
                 },
                 columns: [
-                    { field: "Id", title: "便籤編號", width: "100px" },
-                    { field: "Keynote", title: "便籤主旨", width: "100px" },
-                    { field: "Detail", title: "便籤內容", width: "160px" },
-                    { command: ["edit", "destroy"], title: "Command", width: "250px" }
+                    { field: "Id", title: "編號", width: "100px" },
+                    { field: "Keynote", title: "標題", width: "100px" },
+                    { field: "Detail", title: "詳細描述", width: "160px" },
+                    { command: ["edit", "destroy"], width: "250px" }
                 ]
             });
 
