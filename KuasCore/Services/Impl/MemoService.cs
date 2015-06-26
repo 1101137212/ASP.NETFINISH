@@ -11,7 +11,7 @@ namespace KuasCore.Services.Impl
 {
     public class MemoService : IMemoService
     {
-        public IMemoService MemoDao { get; set; }
+        public IMemoDao MemoDao { get; set; }
 
         public Memo AddMemo(Memo memo)
         {
