@@ -32,7 +32,7 @@ namespace KuasWebApp.Controllers
         [HttpPut]
         public Memo UpdateMemo(Memo memo)
         {
-            CheckMemoIsNotNullThrowException(memo);
+            CheckmemoIsNullThrowException(memo);
 
             try
             {
